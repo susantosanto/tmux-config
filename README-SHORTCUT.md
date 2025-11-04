@@ -15,8 +15,8 @@ Dokumentasi ini menjelaskan shortcut tmux yang telah dikonfigurasi dalam sistem 
 - **F1 + c** - Buat window baru
 - **F1 + |** - Split window horizontal
 - **F1 + -** - Split window vertikal
-- **F1 + n** - Window berikutnya
-- **F1 + p** - Window sebelumnya
+- **F1 + o** - Pindah ke window sebelumnya (previous window)
+- **F1 + p** - Pindah ke window berikutnya (next window)
 - **F1 + h/j/k/l** - Navigasi pane (kiri/bawah/atas/kanan)
 - **F1 + t** - Toggle zoom pane
 - **F1 + x** - Kill pane
@@ -53,6 +53,9 @@ Dokumentasi ini menjelaskan shortcut tmux yang telah dikonfigurasi dalam sistem 
 
 ## Custom Commands
 
+- **F1 + n** - Buka neovim di window baru
+- **F1 + Ctrl + n** - Buka neovim di pane horizontal
+- **F1 + Ctrl + v** - Buka neovim di pane vertikal
 - **F1 + q** - Buka pane baru dengan perintah `qwen`
 - **F1 + Q** - Buka window baru dengan perintah `qwen`
 - **F1 + e** - Buka pane baru dengan perintah `opencode`
@@ -63,6 +66,11 @@ Dokumentasi ini menjelaskan shortcut tmux yang telah dikonfigurasi dalam sistem 
 - `qwen` adalah perintah terminal untuk Qwen Code
 - `opencode` adalah perintah terminal untuk OpenCode
 - Kedua perintah ini akan dijalankan di path yang sama dengan pane/window saat ini
+
+## Perpindahan Window
+
+- **F1 + ,** - Pindahkan window ke kiri
+- **F1 + .** - Pindahkan window ke kanan
 
 ## Lainnya
 
