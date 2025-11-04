@@ -1,131 +1,76 @@
-# Dokumentasi Pintasan Tmux
+# Tmux Shortcut Guide
 
-Dokumentasi ini berisi semua pintasan keyboard untuk konfigurasi tmux Anda yang saat ini menggunakan tema Oasis.
+Dokumentasi ini menjelaskan shortcut tmux yang telah dikonfigurasi dalam sistem Anda.
 
 ## Prefix Key
-- `F1` - Prefix key (menggantikan Ctrl-b)
 
-## Navigasi dan Manipulasi Window/Pane
+- **F1** - Prefix key utama (menggantikan Ctrl+b)
 
-### Membagi Window
-- `F1` + `|` - Membagi window secara horizontal
-- `F1` + `-` - Membagi window secara vertikal
+## Session Management
 
-### Navigasi Pane
-- `F1` + `h` - Pindah ke pane kiri
-- `F1` + `j` - Pindah ke pane bawah
-- `F1` + `k` - Pindah ke pane atas
-- `F1` + `l` - Pindah ke pane kanan
+- **F1 + Shift + S** - Manual save session sebelum shutdown/restart
 
-### Resize Pane
-- `F1` + `H` - Resize pane ke kiri
-- `F1` + `J` - Resize pane ke bawah
-- `F1` + `K` - Resize pane ke atas
-- `F1` + `L` - Resize pane ke kanan
+## Window dan Pane Management
 
-### Copy Mode
-- `F1` + `[` - Masuk ke copy mode
-- Dalam copy mode vi:
-  - `v` - Mulai seleksi teks
-  - `y` - Copy seleksi dan keluar dari copy mode
-  - `C-j` - Scroll page down
-  - `C-k` - Scroll page up
-  - `C-d` - Scroll half page down
-  - `C-u` - Scroll half page up
-  - `/` - Cari teks
+- **F1 + c** - Buat window baru
+- **F1 + |** - Split window horizontal
+- **F1 + -** - Split window vertikal
+- **F1 + n** - Window berikutnya
+- **F1 + p** - Window sebelumnya
+- **F1 + h/j/k/l** - Navigasi pane (kiri/bawah/atas/kanan)
+- **F1 + t** - Toggle zoom pane
+- **F1 + x** - Kill pane
+- **F1 + X** - Kill window
 
-### Manipulasi Window
-- `F1` + `c` - Buat window baru
-- `F1` + `x` - Kill pane
-- `F1` + `X` - Kill window
-- `F1` + `n` - Pindah ke window berikutnya
-- `F1` + `p` - Pindah ke window sebelumnya
-- `F1` + `C-h` - Pindahkan window ke kiri
-- `F1` + `C-l` - Pindahkan window ke kanan
+## Resize Pane
 
-## Plugin dan Fungsi Lainnya
+- **F1 + H/J/K/L** - Resize pane ke kiri/bawah/atas/kanan
+- **F1 + Ctrl + H/J/K/L** - Resize pane dengan ukuran besar
 
-### Plugin Manager (TPM)
-- `F1` + `I` - Install plugin
-- `F1` + `U` - Update plugin
-- `F1` + `C` - Clean plugin yang tidak digunakan
+## Custom Path Management
 
-### Menu dan Command Palette
-- `F1` + `m` - Buka tmux-menus
-- `F1` + `P` - Buka command palette
-- `F1` + `?` - Buka prefix command palette
+- **F1 + Shift + P** - Buka pane horizontal dengan custom path (relatif terhadap home, misal: `.config/nvim`)
+- **F1 + Ctrl + P** - Buka pane vertikal dengan custom path (gunakan ~ untuk home, misal: `~/projects/myproject`)
+- **F1 + Shift + W** - Buka window baru dengan custom path (gunakan ~ untuk home, misal: `~/documents`)
 
-### Fungsi Lainnya
-- `F1` + `s` - Pilih sesi
-- `F1` + `w` - Pilih window
-- `F1` + `r` - Reload konfigurasi
-- `F1` + `t` - Toggle zoom pada pane
+## Session dan Window Tree
 
-## Plugin Produktivitas Baru
+- **F1 + s** - Lihat tree session
+- **F1 + w** - Lihat tree window
 
-### tmux-yank
-Plugin untuk copy ke clipboard sistem dari dalam tmux.
+## Command dan Menu
 
-- `F1` + `y` - Copy teks yang diseleksi ke clipboard sistem
-- `F1` + `Y` - Copy seluruh baris yang dipilih ke clipboard sistem
-- Dalam copy mode vi:
-  - `Y` - Copy seleksi ke clipboard sistem
+- **F1 + r** - Reload konfigurasi tmux
+- **F1 + F1** - Buka menu (dengan tmux-which-key)
+- **F1 + m** - Buka tmux-menus
+- **F1 + BSpace** - Buka command palette
 
-### tmux-prefix-highlight
-Plugin untuk menyorot status prefix key agar jelas kapan Anda dalam mode perintah tmux.
+## Navigasi dan Copy Mode
 
-- Tidak memiliki shortcut spesifik, tetapi akan menyorot status bar saat prefix key aktif
-- Warna foreground: white
-- Warna background: red
-- Juga menyorot saat dalam copy mode
+- **F1 + [** - Masuk copy mode
+- **Copy mode vi**: Gunakan h/j/k/l untuk navigasi, v untuk select, y untuk copy
+- **F1 + /** - Cari teks dalam session
 
-### tmux-better-mouse-mode
-Plugin untuk mengelola mouse di tmux dengan lebih baik, termasuk emulasi mouse untuk program fullscreen seperti less dan kemampuan untuk keluar dari copy-mode dengan scrolling.
+## Custom Commands
 
-- Fungsi utama berjalan secara otomatis saat plugin aktif
-- Memungkinkan penggunaan mouse untuk seleksi teks dan navigasi
-- Mengaktifkan scrolling dalam buffer dan keluar dari copy mode saat scroll ke bawah
+- **F1 + q** - Buka pane baru dengan perintah `qwen`
+- **F1 + Q** - Buka window baru dengan perintah `qwen`
+- **F1 + e** - Buka pane baru dengan perintah `opencode`
+- **F1 + E** - Buka window baru dengan perintah `opencode`
 
-### tmux-which-key
-Plugin untuk menampilkan semua pintasan keyboard yang tersedia setelah menekan prefix key tertentu.
+## Informasi Tambahan
 
-- `Ctrl` + `a` - Menampilkan daftar semua pintasan (prefix table)
-- `Ctrl` + `Shift` + `2` - Menampilkan daftar semua pintasan (root table)
-- Tampilan daftar pintasan otomatis akan hilang setelah beberapa detik
-- Warna border untuk tampilan: #859900 (hijau lembut)
-- Posisi tampilan: atas
-- Label pintasan akan dibungkus (wrap) jika terlalu panjang
+- `qwen` adalah perintah terminal untuk Qwen Code
+- `opencode` adalah perintah terminal untuk OpenCode
+- Kedua perintah ini akan dijalankan di path yang sama dengan pane/window saat ini
 
-### tmux-neolazygit
-Plugin untuk mengintegrasikan lazygit ke dalam tmux, menyediakan antarmuka Git yang ramah pengguna secara visual.
+## Lainnya
 
-- `F1` + `g` - Membuka lazygit dalam pane baru
-- Secara default akan membuka lazygit di posisi kanan dengan lebar 80% dan tinggi 80%
-- Jika lazygit tidak terinstal di sistem, plugin ini akan menampilkan pesan kesalahan
+- **F1 + Tab** - Pindah ke pane sebelumnya
+- **F1 + d** - Detach dari session
 
+## Note
 
-
-## Status Bar
-- Status bar berada di posisi atas
-- Menampilkan nama sesi, daftar window, serta informasi CPU dan waktu
-- Warna status berubah sesuai tingkat penggunaan CPU
-- Background status bar transparan
-- Highlight prefix akan muncul saat prefix key aktif
-
-## Konfigurasi Tambahan
-- Mouse support: Aktif
-- 256 color mode: Aktif
-- Base window index: 1 (bukan 0)
-- History limit: 1000 baris
-
-## Shortcut Kustom Terbaru
-
-### Fungsi Qwen dan Opendcode
-- `F1` + `q` - Membuka pane baru secara horizontal (vertical split) dan menjalankan perintah `qwen`
-- `F1` + `Q` - Membuka window baru dan menjalankan perintah `qwen`
-- `F1` + `e` - Membuka pane baru secara horizontal (vertical split) dan menjalankan perintah `opencode`
-- `F1` + `E` - Membuka window baru dan menjalankan perintah `opencode`
-
-### Fungsi Tambahan
-- `F1` + `Tab` - Pindah ke pane sebelumnya
-- `F1` + `/` - Mencari teks dalam pane
+- Gunakan `~` untuk merujuk ke home directory (`/home/xcode`)
+- Path relatif dihitung dari home directory (misal: `.config/nvim` = `~/config/nvim`)
+- Fungsi session persistence otomatis berjalan setiap 15 menit
